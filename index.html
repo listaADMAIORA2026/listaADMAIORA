@@ -101,7 +101,7 @@ h2::after{content:"";display:block;width:84px;height:6px;margin-top:12px;backgro
 .photo{border-bottom:4px solid var(--gold)}
 .member{border-top:4px solid var(--blue)}
 .quote{border-left-color:var(--gold)}
-.traits{color:var(--blueT)}
+.traits{color:var(--blueT)}.traits small{display:block;color:var(--grey);font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:2px}
 .ideas-tabs button.on{background:var(--blue);border-color:var(--blue);color:#fff}
 .ideas-tabs button{border-color:var(--blue);color:var(--blueT)}
 .dark h2::after{background:var(--gold)}
@@ -220,14 +220,12 @@ const CONFIG = {
   ],
   /* foto: scrivi il nome del file, es. "foto/anna.jpg". Vuoto = segnaposto */
   componenti: [
-    {nome:"Adame Oubenali", soprannome:"Soprannome (facoltativo)", ruolo:"Responsabile immagine e comunicazione",
-     descrizione:"Quello che trasforma le idee in realtà, possibilmente prima della scadenza.",
-     tratto:"Tratto distintivo", frase:"Si punta al TOP", foto:"foto/adame.jpg"},
-    ...["Daniel Levonja","Serafim Catan","Sabiro Bayere","Gabriele Molinaroli","Silvio Arcelloni"].map(n => ({
-      nome: n, soprannome: "Soprannome (facoltativo)", ruolo: "Ruolo nella lista",
-      descrizione: "[SEGNAPOSTO] Due righe simpatiche e spontanee su di lei o di lui.",
-      tratto: "Tratto distintivo", frase: "Una frase che lo/la rappresenta.", foto: ""
-    }))
+    {nome:"Adame Oubenali", frase:"Osservo in silenzio, pianifico con precisione, agisco con determinazione", tratto:"Tenacia", foto:"foto/adame.jpg"},
+    {nome:"Daniel Levonja", frase:"Serio quando serve, ironico quando si può", tratto:"Ambizioso", foto:"foto/daniel.jpg"},
+    {nome:"Serafim Catan", frase:"Se c'è da chiudere un accordo, ci penso io. Voi pensate ad usufruirne.", tratto:"Determinato", foto:"foto/serafim.jpg"},
+    {nome:"Sabiro Bayere", frase:"Una frase che lo rappresenta.", tratto:"Da inserire", foto:"foto/sabiro.jpg"},
+    {nome:"Gabriele Molinaroli", frase:"Una presenza attenta e creativa, sempre pronto a mettermi in gioco", tratto:"Inolvidable", foto:"foto/gabriele.jpg"},
+    {nome:"Silvio Arcelloni", frase:"Una frase che lo rappresenta.", tratto:"Da inserire", foto:"foto/silvio.jpg"}
   ]
 };
 /* ============ FINE PARTE MODIFICABILE ============ */
@@ -236,7 +234,7 @@ const $=s=>document.querySelector(s), esc=t=>String(t).replace(/[&<>"']/g,c=>({'
 $('#motto').textContent=CONFIG.motto; $('#intro').textContent=CONFIG.intro; $('#ig').href=CONFIG.instagram;if(CONFIG.qr){const q=$('#qr');q.src=CONFIG.qr;q.hidden=false;q.onerror=()=>q.hidden=true}
 $('#mq').innerHTML=Array(12).fill('ADMAIORA <i>✦</i> '+esc(CONFIG.motto)+' <i>✦</i> ').join('');
 $('#story').innerHTML=CONFIG.storia.map(([t,p])=>`<div class="card reveal"><h3>${esc(t)}</h3><p>${esc(p)}</p></div>`).join('');
-$('#teamGrid').innerHTML=CONFIG.componenti.map(m=>`<article class="member reveal"><div class="photo">${m.foto?`<img src="${esc(m.foto)}" alt="Foto di ${esc(m.nome)}" loading="lazy" onerror="this.replaceWith(document.createTextNode('${esc(m.nome.trim().charAt(0))}'))">`:esc(m.nome.trim().charAt(0))}</div><div class="body"><h3>${esc(m.nome)}</h3><div class="nick">“${esc(m.soprannome)}” · ${esc(m.ruolo)}</div><p>${esc(m.descrizione)}</p><div class="traits">★ ${esc(m.tratto)}</div><div class="quote">${esc(m.frase)}</div></div></article>`).join('');
+$('#teamGrid').innerHTML=CONFIG.componenti.map(m=>`<article class="member reveal"><div class="photo">${m.foto?`<img src="${esc(m.foto)}" alt="Foto di ${esc(m.nome)}" loading="lazy" onerror="this.replaceWith(document.createTextNode('${esc(m.nome.trim().charAt(0))}'))">`:esc(m.nome.trim().charAt(0))}</div><div class="body"><h3>${esc(m.nome)}</h3><div class="quote">“${esc(m.frase)}”</div><div class="traits"><small>Tratto distintivo</small>★ ${esc(m.tratto)}</div></div></article>`).join('');
 
 let ct='Tutte';
 function drawConv(){
