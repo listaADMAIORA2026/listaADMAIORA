@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista ADMAIORA – Romagnosi, Piacenza</title>
+<meta name="description" content="Lista ADMAIORA: sei studenti del Romagnosi. Più voce, più impegno per lasciare il nostro segno.">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#21386a;--blueT:#21386a;--gold:#c8962c;--bg:#f4f4f2;--ink:#0d0d0d;--grey:#8a8a87;--card:#fff;--line:#d8d8d4;--r:18px}
+@media(prefers-color-scheme:dark){:root{--blue:#3a5ab0;--blueT:#8fa8e8;--bg:#0d0d0d;--ink:#f4f4f2;--grey:#9a9a96;--card:#181818;--line:#2c2c2c}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 Inter,system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:'Archivo Black',Impact,sans-serif;text-transform:uppercase;line-height:.95;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1050px;margin:auto;padding:0 20px}
+section{padding:72px 0}
+nav{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav .links{display:flex;gap:18px;font-size:14px;font-weight:600}
+nav .links a{text-decoration:none}
+@media(max-width:620px){nav .links a:not(.cta){display:none}}
+.btn{display:inline-block;padding:13px 22px;border-radius:99px;border:2px solid var(--ink);font-weight:600;text-decoration:none;cursor:pointer;background:none;color:var(--ink);font-size:16px;transition:transform .15s}
+.btn:hover{transform:translate(-2px,-2px)}
+.btn.fill{background:var(--ink);color:var(--bg)}
+.cta{background:var(--ink);color:var(--bg);padding:6px 14px;border-radius:99px}
+.hero{min-height:88vh;display:flex;align-items:center;padding:40px 0}
+.hero h1{font-size:clamp(3.4rem,17vw,9.5rem);transform:rotate(-2deg);margin:14px 0 26px}
+.hero h1 span{display:block;font-size:.34em;letter-spacing:.2em;color:var(--grey)}
+.tag{display:inline-block;border:2px solid var(--ink);padding:3px 12px;border-radius:99px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.motto{font-size:clamp(1.2rem,3.6vw,1.8rem);max-width:640px;font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.marquee{overflow:hidden;white-space:nowrap;border-block:2px solid var(--ink);padding:10px 0;font-family:'Archivo Black';text-transform:uppercase}
+.marquee div{display:inline-block;animation:m 28s linear infinite}
+@keyframes m{to{transform:translateX(-50%)}}
+h2{font-size:clamp(2.2rem,8vw,4.2rem);margin-bottom:28px}
+.draft{display:inline-block;background:#ffe14d;color:#000;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;letter-spacing:.06em;vertical-align:middle}
+.story{display:grid;gap:16px}
+@media(min-width:760px){.story{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.card h3{font-size:1.25rem;margin-bottom:10px}
+.card p{color:var(--grey)}
+.team{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:620px){.team{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.team{grid-template-columns:repeat(3,1fr)}}
+.member{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .2s}
+.member:nth-child(even){transform:translateY(14px)}
+.member:hover{transform:translateY(-4px) rotate(-.6deg)}
+.photo{aspect-ratio:4/4.2;background:repeating-linear-gradient(45deg,var(--line) 0 10px,transparent 10px 20px);display:grid;place-items:center;font-family:'Archivo Black';font-size:3rem;color:var(--grey)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.member .body{padding:18px}
+.member h3{font-size:1.4rem}
+.nick{color:var(--grey);font-weight:600;font-size:14px;margin:4px 0 8px}
+.quote{border-left:3px solid var(--ink);padding-left:10px;margin-top:10px;font-style:italic}
+.traits{margin-top:10px;font-size:14px;font-weight:600}
+.ideas-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.ideas-tabs button{padding:8px 16px;border-radius:99px;border:2px solid var(--ink);background:none;color:var(--ink);font:600 14px Inter;cursor:pointer}
+.ideas-tabs button.on{background:var(--ink);color:var(--bg)}
+.ideas{display:grid;gap:16px}
+@media(min-width:760px){.ideas{grid-template-columns:repeat(2,1fr)}}
+.ideas .card b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin-top:10px}
+.state{float:right}
+.dark{background:var(--ink);color:var(--bg)}
+.dark .card{background:transparent;border-color:var(--grey)}
+form{display:grid;gap:16px;max-width:640px}
+label{font-weight:600;font-size:15px;display:grid;gap:6px}
+label small{font-weight:400;color:var(--grey)}
+input,select,textarea{font:inherit;padding:13px 14px;border-radius:12px;border:2px solid var(--grey);background:#fff;color:#000;width:100%}
+input:focus,select:focus,textarea:focus{outline:3px solid #ffe14d;border-color:#000}
+textarea{min-height:140px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px}
+.chk input{width:22px;height:22px;margin-top:2px;flex:none}
+.dark .btn.fill{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+#msg{padding:16px;border-radius:12px;display:none;font-weight:600}
+#msg.ok{display:block;background:#d6f5d6;color:#0a3d0a}
+#msg.err{display:block;background:#ffd9d9;color:#5a0a0a}
+.priv{font-size:14px;color:var(--grey);max-width:640px;margin-top:22px}
+#qr{width:110px;height:110px;border-radius:12px;border:2px solid var(--ink);background:#fff}
+.conv dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:15px;margin-top:10px}.conv dt{font-weight:700}.conv dd{margin:0;color:var(--grey)}.conv dd a{color:var(--ink);font-weight:600}
+
+.lg{border-radius:50%;background:#fff;display:block;object-fit:cover}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand .lg{width:36px;height:36px;border:2px solid var(--gold)}
+.cta{background:var(--gold)!important;color:#1a1200!important}
+.tag{border-color:var(--gold)}
+.hero .wrap{display:grid;gap:28px;align-items:center}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1fr 330px}}
+.heroLogo{width:min(62vw,300px);aspect-ratio:1;border:4px solid var(--blue);box-shadow:8px 8px 0 var(--gold);justify-self:center;animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-8px) rotate(2deg)}}
+.hero h1 span{color:var(--gold)}
+.btn:hover{box-shadow:4px 4px 0 var(--gold)}
+.marquee{background:var(--blue);color:#fff;border-color:var(--gold)}
+.marquee i{color:var(--gold);font-style:normal}
+h2::after{content:"";display:block;width:84px;height:6px;margin-top:12px;background:linear-gradient(90deg,var(--blue) 0 50%,var(--gold) 50%);border-radius:3px}
+.card{border-top:4px solid var(--blue)}
+.card:nth-child(even){border-top-color:var(--gold)}
+.photo{border-bottom:4px solid var(--gold)}
+.member{border-top:4px solid var(--blue)}
+.quote{border-left-color:var(--gold)}
+.traits{color:var(--blueT)}
+.ideas-tabs button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.ideas-tabs button{border-color:var(--blue);color:var(--blueT)}
+.dark h2::after{background:var(--gold)}
+.dark .card{border-top-color:var(--gold)}
+input:focus,select:focus,textarea:focus{outline-color:var(--gold)}
+footer{border-top:4px solid var(--blue);box-shadow:0 -4px 0 var(--gold)}
+footer .lg{width:84px;height:84px;border:3px solid var(--blue)}
+.fl{display:flex;gap:14px;align-items:center}
+footer{padding:40px 0;border-top:2px solid var(--ink)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.reveal{opacity:0;transform:translateY(24px);transition:.6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#home" class="brand"><img class="lg" src="logo.jpg" alt="Logo Lista ADMAIORA" onerror="this.style.display='none'"><span class="logo" id="navLogo">ADMAIORA</span></a>
+  <div class="links"><a href="#storia">Storia</a><a href="#team">Noi</a><a href="#idee">Idee</a><a href="#convenzioni">Convenzioni</a><a href="#proposta" class="cta">Scrivici</a></div>
+</div></nav>
+
+<header class="hero" id="home"><div class="wrap">
+  <div>
+  <span class="tag">Romagnosi · Piacenza · Rappresentanti d'istituto</span>
+  <h1 id="heroName"><span>Lista</span>ADMAIORA</h1>
+  <p class="motto" id="motto"></p>
+  <p style="max-width:560px;margin-top:16px;color:var(--grey)" id="intro"></p>
+  <div class="row">
+    <a class="btn fill" href="#team">Conosci i sei</a>
+    <a class="btn" href="#storia">La nostra storia</a>
+    <a class="btn" href="#proposta">Invia una proposta</a>
+  </div>
+</div>
+  <img class="lg heroLogo" src="logo.jpg" alt="Logo Lista ADMAIORA: più voce, più impegno, per lasciare il nostro segno" onerror="this.style.display='none'">
+</div></header>
+
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="storia"><div class="wrap">
+  <h2>La nostra storia <span class="draft">BOZZA</span></h2>
+  <div class="story" id="story"></div>
+</div></section>
+
+<section id="team"><div class="wrap">
+  <h2>Noi sei <span class="draft">SEGNAPOSTO</span></h2>
+  <div class="team" id="teamGrid"></div>
+</div></section>
+
+<section id="idee"><div class="wrap">
+  <h2>Le nostre idee <span class="draft">BOZZA</span></h2>
+  <div class="ideas-tabs" id="tabs"></div>
+  <div class="ideas" id="ideas"></div>
+</div></section>
+
+<section id="convenzioni"><div class="wrap">
+  <h2>Convenzioni</h2>
+  <p style="max-width:640px;margin-bottom:22px">Sconti e vantaggi per gli studenti del Romagnosi con locali, ristoranti e negozi convenzionati. Per usarli basta il <b>badge scolastico del Romagnosi</b>, che ti dà la scuola. Valide <b>dal giorno dopo le elezioni al 5 giugno</b>.</p>
+  <div class="ideas-tabs" id="ctabs"></div>
+  <div class="ideas" id="conv"></div>
+</div></section>
+
+<section id="proposta" class="dark"><div class="wrap">
+  <h2>Dicci la tua</h2>
+  <p style="max-width:600px;margin-bottom:26px">Una proposta, qualcosa che non va, un'idea per un evento. Il nome è facoltativo. Nessun account, nessuna registrazione. Le proposte non vengono pubblicate sul sito: le leggiamo solo noi sei.</p>
+  <form id="f" novalidate>
+    <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label>Di cosa si tratta?
+      <select name="categoria" required>
+        <option value="">Scegli…</option>
+        <option>Una proposta</option><option>Una cosa che vorrei cambiare</option>
+        <option>Un problema che ho notato</option><option>Idea per un'attività o evento</option>
+        <option>Suggerimento per la vita scolastica</option><option>Messaggio generale</option>
+      </select></label>
+    <label>Titolo <small>(facoltativo)</small><input name="titolo" maxlength="80"></label>
+    <label>Scrivi qui <textarea name="descrizione" required maxlength="2000"></textarea></label>
+    <label>Nome o soprannome <small>(facoltativo, lascia vuoto se preferisci)</small><input name="nome" maxlength="40" autocomplete="off"></label>
+    <label class="chk"><input type="checkbox" id="ok" required><span>Ho letto l'informativa qui sotto e accetto che la lista legga il mio messaggio.</span></label>
+    <button class="btn fill" type="submit" id="send">Invia</button>
+    <div id="msg" role="status"></div>
+  </form>
+  <p class="priv"><b>Informativa breve.</b> Raccogliamo solo il testo che scrivi e, se vuoi, un nome. Il messaggio arriva ai sei componenti della lista e serve solo a capire come migliorare la scuola, non per altri scopi. Usiamo Google Forms per ricevere i messaggi, e i servizi Google possono registrare dati tecnici (per esempio l'indirizzo IP), quindi non promettiamo anonimato assoluto: non scrivere dati sensibili tuoi o di altri. Non pubblichiamo i messaggi. <span class="draft">BOZZA: da rivedere con un docente referente</span></p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fl"><img class="lg" src="logo.jpg" alt="Logo Lista ADMAIORA" onerror="this.style.display='none'"><div><span class="logo">Lista ADMAIORA</span><br><small style="color:var(--grey)">Istituto Gian Domenico Romagnosi, Piacenza · Elezioni dei rappresentanti d'istituto</small></div></div>
+  <div class="row" style="margin:0">
+    <img id="qr" alt="QR code Instagram ADMAIORA" hidden>
+    <a class="btn" id="ig" target="_blank" rel="noopener">Instagram</a>
+    <a class="btn fill" href="#proposta">Invia una proposta</a>
+  </div>
+</div></footer>
+
+<script>
+/* ============ MODIFICA SOLO QUESTA PARTE ============
+   Tutto il testo del sito è qui. Le voci con draft:true mostrano l'etichetta BOZZA. */
+const CONFIG = {
+  motto: "Più voce, più impegno per lasciare il nostro segno.",
+  intro: "Siamo sei studenti del Romagnosi che si candidano per esserci davvero, non solo a ottobre.", /* BOZZA */
+  instagram: "https://www.instagram.com/listaadmaiora2026/",
+  qr: "qr.png", /* file del QR code Instagram caricato su GitHub accanto a index.html; vuoto = nascosto */
+  /* Google Form: vedi istruzioni. Incolla l'indirizzo che finisce con /formResponse e i codici entry.xxxx dei 4 campi */
+  form: {
+    action: "https://docs.google.com/forms/d/e/1FAIpQLScRnztnPcbxRRE_Kh7gMczPNtGoSGgw0YEMKKjq8E3xEiYNfQ/formResponse",
+    entry: {categoria:"entry.1463746059", titolo:"entry.424497013", descrizione:"entry.1647601500", nome:"entry.92150384"}
+  },
+  convenzioni: [
+    {tipo:"Discoteche", nome:"No bla bla & Too much", sub:"Crew", vantaggio:"Ingresso: sconti che variano in base alla serata (3%, 5%, 10% o shottini in omaggio). Tavoli: sconto del 3% o del 5% in base a quanto spende il tavolo.", come:"Presenta il badge scolastico del Romagnosi.", doveLabel:"Locali", links:[["Lowkey","https://share.google/AdN4a47uole894CiS"],["Avila","https://share.google/4WgyBVDWcUsUwhSy7"],["Lux&Village","https://share.google/Gt0GDqdoJvmBfmugb"]]},
+    {tipo:"Cibo", nome:"Vicolo", sub:"Ristorante", vantaggio:"Pranzo: piatto unico + acqua a 10 €. Cena: 15% di sconto. Bottiglie di vino: 10% di sconto.", come:"Presenta il badge scolastico del Romagnosi.", links:[["Apri su Maps","https://maps.app.goo.gl/QxF9dsaqwWjmBBNHA?g_st=ic"]]},
+    {tipo:"Cibo", nome:"Voglia di pizza", sub:"Pizzeria", vantaggio:"Ogni 10 pizze, 1 in omaggio.", come:"Vai in pizzeria con il badge del Romagnosi: ti daranno la carta con cui fare il 10+1.", links:[["Apri su Maps","https://maps.app.goo.gl/ae7CgNjFXjmieF6t8?g_st=ic"]]},
+    {tipo:"Cibo", nome:"Ragò", sub:"Ristorante", stato:"Coming soon", vantaggio:"I dettagli della convenzione arriveranno presto."},
+    {tipo:"Negozi", nome:"Elbella", sub:"Parrucchiere", vantaggio:"Taglio di capelli a 10 € con maschera in omaggio.", come:"Presenta il badge scolastico del Romagnosi.", links:[["Apri su Maps","https://maps.app.goo.gl/vvQgrRLRsrFtJHAh6?g_st=ic"]]},
+    {tipo:"Negozi", nome:"Sesto Elemento", sub:"Tatuaggi e abbigliamento", vantaggio:"Tatuaggi: 20% di sconto. Abbigliamento: 10% di sconto.", condizioni:"Sconto valido con una spesa minima di 100 €.", come:"Presenta il badge scolastico del Romagnosi.", links:[["Apri su Maps","https://maps.app.goo.gl/Y1m6ysz6raazwAPEA?g_st=ic"]]}
+  ],
+
+  storia: [
+    ["Come è nata l'idea", "[BOZZA] Qui racconteremo il momento in cui ci siamo detti: perché non provarci?"],
+    ["Da cosa siamo partiti", "[BOZZA] Una situazione, una discussione o un'esperienza a scuola."],
+    ["Perché ci candidiamo", "[BOZZA] Il motivo vero, con parole nostre."],
+    ["Cosa vorremmo migliorare", "[BOZZA] Gli aspetti della vita scolastica che ci stanno a cuore."],
+    ["I nostri valori", "[BOZZA] Le due o tre cose che ci tengono insieme."],
+    ["La nostra visione di scuola", "[BOZZA] Come immaginiamo il Romagnosi tra qualche anno."]
+  ],
+  /* foto: scrivi il nome del file, es. "foto/anna.jpg". Vuoto = segnaposto */
+  componenti: [
+    {nome:"Adame Oubenali", soprannome:"Soprannome (facoltativo)", ruolo:"Responsabile immagine e comunicazione",
+     descrizione:"Quello che trasforma le idee in realtà, possibilmente prima della scadenza.",
+     tratto:"Tratto distintivo", frase:"Si punta al TOP", foto:"foto/adame.jpg"},
+    ...["Daniel Levonja","Serafim Catan","Sabiro Bayere","Gabriele Molinaroli","Silvio Arcelloni"].map(n => ({
+      nome: n, soprannome: "Soprannome (facoltativo)", ruolo: "Ruolo nella lista",
+      descrizione: "[SEGNAPOSTO] Due righe simpatiche e spontanee su di lei o di lui.",
+      tratto: "Tratto distintivo", frase: "Una frase che lo/la rappresenta.", foto: ""
+    }))
+  ],
+  categorie: ["Vita scolastica","Spazi e ambienti","Attività ed eventi","Comunicazione","Benessere e inclusione","Altro"],
+  idee: [
+    {cat:"Vita scolastica", titolo:"Idea di esempio 1", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"},
+    {cat:"Spazi e ambienti", titolo:"Idea di esempio 2", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"},
+    {cat:"Attività ed eventi", titolo:"Idea di esempio 3", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"},
+    {cat:"Comunicazione", titolo:"Idea di esempio 4", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"},
+    {cat:"Benessere e inclusione", titolo:"Idea di esempio 5", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"}
+  ]
+};
+/* ============ FINE PARTE MODIFICABILE ============ */
+
+const $=s=>document.querySelector(s), esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+$('#motto').textContent=CONFIG.motto; $('#intro').textContent=CONFIG.intro; $('#ig').href=CONFIG.instagram;if(CONFIG.qr){const q=$('#qr');q.src=CONFIG.qr;q.hidden=false;q.onerror=()=>q.hidden=true}
+$('#mq').innerHTML=Array(12).fill('ADMAIORA <i>✦</i> '+esc(CONFIG.motto)+' <i>✦</i> ').join('');
+$('#story').innerHTML=CONFIG.storia.map(([t,p])=>`<div class="card reveal"><h3>${esc(t)}</h3><p>${esc(p)}</p></div>`).join('');
+$('#teamGrid').innerHTML=CONFIG.componenti.map(m=>`<article class="member reveal"><div class="photo">${m.foto?`<img src="${esc(m.foto)}" alt="Foto di ${esc(m.nome)}" loading="lazy" onerror="this.replaceWith(document.createTextNode('${esc(m.nome.trim().charAt(0))}'))">`:esc(m.nome.trim().charAt(0))}</div><div class="body"><h3>${esc(m.nome)}</h3><div class="nick">“${esc(m.soprannome)}” · ${esc(m.ruolo)}</div><p>${esc(m.descrizione)}</p><div class="traits">★ ${esc(m.tratto)}</div><div class="quote">${esc(m.frase)}</div></div></article>`).join('');
+let cur='Tutte';
+function drawIdeas(){
+  $('#tabs').innerHTML=['Tutte',...CONFIG.categorie].map(c=>`<button class="${c===cur?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
+  $('#ideas').innerHTML=CONFIG.idee.filter(i=>cur==='Tutte'||i.cat===cur).map(i=>`<div class="card"><span class="draft state">${esc(i.stato)}</span><small style="color:var(--grey)">${esc(i.cat)}</small><h3>${esc(i.titolo)}</h3><b>Il problema</b><p>${esc(i.problema)}</p><b>La soluzione</b><p>${esc(i.soluzione)}</p></div>`).join('')||'<p>Nessuna idea in questa categoria, per ora.</p>';
+}
+$('#tabs').onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;drawIdeas()}};
+drawIdeas();
+
+let ct='Tutte';
+function drawConv(){
+  const tipi=[...new Set(CONFIG.convenzioni.map(c=>c.tipo))];
+  $('#ctabs').innerHTML=['Tutte',...tipi].map(c=>`<button class="${c===ct?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
+  $('#conv').innerHTML=CONFIG.convenzioni.filter(c=>ct==='Tutte'||c.tipo===ct).map(c=>{
+    const rows=[['Vantaggio',esc(c.vantaggio)]];
+    if(c.come)rows.push(['Come si usa',esc(c.come)]);
+    if(c.condizioni)rows.push(['Condizioni',esc(c.condizioni)]);
+    if(c.links)rows.push([c.doveLabel||'Dove',c.links.map(l=>`<a href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join(' · ')]);
+    return `<div class="card conv">${c.stato?`<span class="draft state">${esc(c.stato)}</span>`:''}<small style="color:var(--grey)">${esc(c.sub||c.tipo)}</small><h3>${esc(c.nome)}</h3><dl>${rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl></div>`}).join('')||'<p>Nessuna convenzione per ora.</p>';
+}
+$('#ctabs').onclick=e=>{if(e.target.dataset.c){ct=e.target.dataset.c;drawConv()}};
+drawConv();
+
+const f=$('#f'), msg=$('#msg');
+f.onsubmit=async e=>{
+  e.preventDefault(); msg.className='';
+  if(!f.categoria.value||!f.descrizione.value.trim()||!$('#ok').checked){msg.className='err';msg.textContent='Scegli una categoria, scrivi il messaggio e spunta la casella.';return}
+  if(f._gotcha.value) return;
+  if(/XXXXXXXX|CATEGORIA_QUI/.test(CONFIG.form.action+CONFIG.form.entry.categoria)){msg.className='err';msg.textContent='Il modulo non è ancora collegato: il tuo messaggio NON è stato inviato.';return}
+  $('#send').disabled=true;
+  try{
+    const E=CONFIG.form.entry, d=new FormData();
+    d.append(E.categoria,f.categoria.value);d.append(E.titolo,f.titolo.value);
+    d.append(E.descrizione,f.descrizione.value);d.append(E.nome,f.nome.value||'(anonimo)');
+    await fetch(CONFIG.form.action,{method:'POST',mode:'no-cors',body:d});
+    f.reset(); msg.className='ok'; msg.textContent='Ricevuto! Grazie per aver contribuito a migliorare la nostra scuola.';
+  }catch(_){msg.className='err';msg.textContent='Qualcosa è andato storto, il messaggio non è partito. Riprova tra poco.'}
+  $('#send').disabled=false;
+};
+
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
