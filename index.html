@@ -120,7 +120,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 <body>
 <nav><div class="wrap">
   <a href="#home" class="brand"><img class="lg" src="logo.jpg" alt="Logo Lista ADMAIORA" onerror="this.style.display='none'"><span class="logo" id="navLogo">ADMAIORA</span></a>
-  <div class="links"><a href="#storia">Storia</a><a href="#team">Noi</a><a href="#idee">Idee</a><a href="#convenzioni">Convenzioni</a><a href="#proposta" class="cta">Scrivici</a></div>
+  <div class="links"><a href="#storia">Storia</a><a href="#team">Noi</a><a href="#convenzioni">Convenzioni</a><a href="#proposta" class="cta">Scrivici</a></div>
 </div></nav>
 
 <header class="hero" id="home"><div class="wrap">
@@ -148,12 +148,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 <section id="team"><div class="wrap">
   <h2>Noi sei <span class="draft">SEGNAPOSTO</span></h2>
   <div class="team" id="teamGrid"></div>
-</div></section>
-
-<section id="idee"><div class="wrap">
-  <h2>Le nostre idee <span class="draft">BOZZA</span></h2>
-  <div class="ideas-tabs" id="tabs"></div>
-  <div class="ideas" id="ideas"></div>
 </div></section>
 
 <section id="convenzioni"><div class="wrap">
@@ -234,14 +228,6 @@ const CONFIG = {
       descrizione: "[SEGNAPOSTO] Due righe simpatiche e spontanee su di lei o di lui.",
       tratto: "Tratto distintivo", frase: "Una frase che lo/la rappresenta.", foto: ""
     }))
-  ],
-  categorie: ["Vita scolastica","Spazi e ambienti","Attività ed eventi","Comunicazione","Benessere e inclusione","Altro"],
-  idee: [
-    {cat:"Vita scolastica", titolo:"Idea di esempio 1", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"},
-    {cat:"Spazi e ambienti", titolo:"Idea di esempio 2", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"},
-    {cat:"Attività ed eventi", titolo:"Idea di esempio 3", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"},
-    {cat:"Comunicazione", titolo:"Idea di esempio 4", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"},
-    {cat:"Benessere e inclusione", titolo:"Idea di esempio 5", problema:"Il problema che vogliamo affrontare.", soluzione:"La soluzione che proponiamo.", stato:"Bozza"}
   ]
 };
 /* ============ FINE PARTE MODIFICABILE ============ */
@@ -251,13 +237,6 @@ $('#motto').textContent=CONFIG.motto; $('#intro').textContent=CONFIG.intro; $('#
 $('#mq').innerHTML=Array(12).fill('ADMAIORA <i>✦</i> '+esc(CONFIG.motto)+' <i>✦</i> ').join('');
 $('#story').innerHTML=CONFIG.storia.map(([t,p])=>`<div class="card reveal"><h3>${esc(t)}</h3><p>${esc(p)}</p></div>`).join('');
 $('#teamGrid').innerHTML=CONFIG.componenti.map(m=>`<article class="member reveal"><div class="photo">${m.foto?`<img src="${esc(m.foto)}" alt="Foto di ${esc(m.nome)}" loading="lazy" onerror="this.replaceWith(document.createTextNode('${esc(m.nome.trim().charAt(0))}'))">`:esc(m.nome.trim().charAt(0))}</div><div class="body"><h3>${esc(m.nome)}</h3><div class="nick">“${esc(m.soprannome)}” · ${esc(m.ruolo)}</div><p>${esc(m.descrizione)}</p><div class="traits">★ ${esc(m.tratto)}</div><div class="quote">${esc(m.frase)}</div></div></article>`).join('');
-let cur='Tutte';
-function drawIdeas(){
-  $('#tabs').innerHTML=['Tutte',...CONFIG.categorie].map(c=>`<button class="${c===cur?'on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
-  $('#ideas').innerHTML=CONFIG.idee.filter(i=>cur==='Tutte'||i.cat===cur).map(i=>`<div class="card"><span class="draft state">${esc(i.stato)}</span><small style="color:var(--grey)">${esc(i.cat)}</small><h3>${esc(i.titolo)}</h3><b>Il problema</b><p>${esc(i.problema)}</p><b>La soluzione</b><p>${esc(i.soluzione)}</p></div>`).join('')||'<p>Nessuna idea in questa categoria, per ora.</p>';
-}
-$('#tabs').onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;drawIdeas()}};
-drawIdeas();
 
 let ct='Tutte';
 function drawConv(){
