@@ -110,6 +110,11 @@ input:focus,select:focus,textarea:focus{outline-color:var(--gold)}
 footer{border-top:4px solid var(--blue);box-shadow:0 -4px 0 var(--gold)}
 footer .lg{width:84px;height:84px;border:3px solid var(--blue)}
 .fl{display:flex;gap:14px;align-items:center}
+.story .card p{color:var(--ink);margin-bottom:0}
+.prog{display:grid;gap:16px}
+@media(min-width:760px){.prog{grid-template-columns:repeat(2,1fr)}.prog .card:first-child{grid-column:1/-1}}
+.prog .num{font:400 3rem/1 'Archivo Black',Impact,sans-serif;color:var(--gold)}
+.prog ul{margin:10px 0 0;padding-left:20px}.prog li{margin:6px 0}
 footer{padding:40px 0;border-top:2px solid var(--ink)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
 .reveal{opacity:0;transform:translateY(24px);transition:.6s}
@@ -120,7 +125,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 <body>
 <nav><div class="wrap">
   <a href="#home" class="brand"><img class="lg" src="logo.jpg" alt="Logo Lista ADMAIORA" onerror="this.style.display='none'"><span class="logo" id="navLogo">ADMAIORA</span></a>
-  <div class="links"><a href="#storia">Storia</a><a href="#team">Noi</a><a href="#convenzioni">Convenzioni</a><a href="#proposta" class="cta">Scrivici</a></div>
+  <div class="links"><a href="#storia">Storia</a><a href="#team">Noi</a><a href="#programma">Proposte</a><a href="#convenzioni">Convenzioni</a><a href="#proposta" class="cta">Scrivici</a></div>
 </div></nav>
 
 <header class="hero" id="home"><div class="wrap">
@@ -141,13 +146,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 <div class="marquee" aria-hidden="true"><div id="mq"></div></div>
 
 <section id="storia"><div class="wrap">
-  <h2>La nostra storia <span class="draft">BOZZA</span></h2>
+  <h2>La nostra storia</h2>
   <div class="story" id="story"></div>
 </div></section>
 
 <section id="team"><div class="wrap">
   <h2>Noi sei <span class="draft">SEGNAPOSTO</span></h2>
   <div class="team" id="teamGrid"></div>
+</div></section>
+
+<section id="programma"><div class="wrap">
+  <h2>Le nostre proposte</h2>
+  <p style="max-width:640px;margin-bottom:26px">Il nostro programma, punto per punto.</p>
+  <div class="prog" id="prog"></div>
 </div></section>
 
 <section id="convenzioni"><div class="wrap">
@@ -211,21 +222,30 @@ const CONFIG = {
   ],
 
   storia: [
-    ["Come è nata l'idea", "[BOZZA] Qui racconteremo il momento in cui ci siamo detti: perché non provarci?"],
-    ["Da cosa siamo partiti", "[BOZZA] Una situazione, una discussione o un'esperienza a scuola."],
-    ["Perché ci candidiamo", "[BOZZA] Il motivo vero, con parole nostre."],
-    ["Cosa vorremmo migliorare", "[BOZZA] Gli aspetti della vita scolastica che ci stanno a cuore."],
-    ["I nostri valori", "[BOZZA] Le due o tre cose che ci tengono insieme."],
-    ["La nostra visione di scuola", "[BOZZA] Come immaginiamo il Romagnosi tra qualche anno."]
+    ["Come è nata l'idea", "Tutto è nato in un bar, davanti a un caffè. Parlando della nostra scuola ci siamo chiesti che cosa servisse al Romagnosi per diventare una bella scuola, davvero attenta agli studenti. Da una chiacchierata tra amici è nato il desiderio di trasformare le parole in un progetto, e il progetto in una lista. Quel caffè ha segnato l'inizio di tutto."],
+    ["Da cosa siamo partiti", "Da un caffè e da un confronto sincero sulla scuola che viviamo ogni giorno, con una convinzione: il Romagnosi aveva bisogno di qualcosa che mettesse gli studenti al centro."],
+    ["Perché ci candidiamo", "Vogliamo che il Romagnosi si distingua per i servizi offerti ai suoi alunni e vogliamo migliorare il nostro istituto, con proposte concrete e un impegno costante."],
+    ["Cosa vogliamo migliorare", "Gli aspetti della vita scolastica di ogni studente: le valutazioni, le classi, il materiale scolastico e tutto ciò che incide sulla scuola di ogni giorno."],
+    ["I nostri valori", "L'amicizia che ci lega e la conoscenza di lunga data del Romagnosi: lo conosciamo bene e sappiamo di che cosa ha bisogno."],
+    ["La nostra visione di scuola", "Immaginiamo il Romagnosi come un vero e proprio nido, in cui possono nascere tante idee e che ha bisogno dei giusti materiali e delle giuste persone per realizzarle. Ad maiora: più voce, più impegno, per lasciare il nostro segno."]
   ],
+
+  programma: [
+    ["Al vostro servizio", ["Bagni delle ragazze: più carta e più sapone", "Più pennarelli e cancellini nelle aule", "Banchi lasciati puliti", "Tendine dove mancano"]],
+    ["Conosciamoci", ["Assemblee di istituto", "Assemblee con i rappresentanti di classe", "Assemblee con diversi personaggi del web"]],
+    ["Tornei di istituto", ["Possibilità di partecipare per tutti, ad eccezione degli alunni con sospensione", "I vincitori, anche di classi diverse, possono partecipare alle gare provinciali"]],
+    ["Feste ed eventi speciali", ["In collaborazione con diverse organizzazioni"]],
+    ["Aula studio al pomeriggio", ["La scuola offre agli studenti la possibilità di fermarsi dopo la mattinata, in orario extrascolastico, per mettersi in pari in caso di insufficienze o difficoltà"]]
+  ],
+
   /* foto: scrivi il nome del file, es. "foto/anna.jpg". Vuoto = segnaposto */
   componenti: [
     {nome:"Adame Oubenali", frase:"Osservo in silenzio, pianifico con precisione, agisco con determinazione", tratto:"Tenacia", foto:"foto/adame.jpg"},
     {nome:"Daniel Levonja", frase:"Serio quando serve, ironico quando si può", tratto:"Ambizioso", foto:"foto/daniel.jpg"},
     {nome:"Serafim Catan", frase:"Se c'è da chiudere un accordo, ci penso io. Voi pensate ad usufruirne.", tratto:"Determinato", foto:"foto/serafim.jpg"},
-    {nome:"Sabiro Bayere", frase:"Una frase che lo rappresenta.", tratto:"Da inserire", foto:"foto/sabiro.jpg"},
+    {nome:"Sabiro Bayere", frase:"Ascolto tutti, poi dico la cosa giusta al momento giusto", tratto:"Affidabile", foto:"foto/sabiro.jpg"},
     {nome:"Gabriele Molinaroli", frase:"Una presenza attenta e creativa, sempre pronto a mettermi in gioco", tratto:"Inolvidable", foto:"foto/gabriele.jpg"},
-    {nome:"Silvio Arcelloni", frase:"Una frase che lo rappresenta.", tratto:"Da inserire", foto:"foto/silvio.jpg"}
+    {nome:"Silvio Arcelloni", frase:"Fa quadrare tutto quando sembra impossibile", tratto:"Trova sempre il modo", foto:"foto/silvio.jpg"}
   ]
 };
 /* ============ FINE PARTE MODIFICABILE ============ */
@@ -233,6 +253,7 @@ const CONFIG = {
 const $=s=>document.querySelector(s), esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 $('#motto').textContent=CONFIG.motto; $('#intro').textContent=CONFIG.intro; $('#ig').href=CONFIG.instagram;if(CONFIG.qr){const q=$('#qr');q.src=CONFIG.qr;q.hidden=false;q.onerror=()=>q.hidden=true}
 $('#mq').innerHTML=Array(12).fill('ADMAIORA <i>✦</i> '+esc(CONFIG.motto)+' <i>✦</i> ').join('');
+$('#prog').innerHTML=CONFIG.programma.map(([t,p],n)=>`<article class="card reveal"><div class="num">0${n+1}</div><h3 style="margin-top:8px">${esc(t)}</h3><ul>${p.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></article>`).join('');
 $('#story').innerHTML=CONFIG.storia.map(([t,p])=>`<div class="card reveal"><h3>${esc(t)}</h3><p>${esc(p)}</p></div>`).join('');
 $('#teamGrid').innerHTML=CONFIG.componenti.map(m=>`<article class="member reveal"><div class="photo">${m.foto?`<img src="${esc(m.foto)}" alt="Foto di ${esc(m.nome)}" loading="lazy" onerror="this.replaceWith(document.createTextNode('${esc(m.nome.trim().charAt(0))}'))">`:esc(m.nome.trim().charAt(0))}</div><div class="body"><h3>${esc(m.nome)}</h3><div class="quote">“${esc(m.frase)}”</div><div class="traits"><small>Tratto distintivo</small>★ ${esc(m.tratto)}</div></div></article>`).join('');
 
